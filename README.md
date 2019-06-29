@@ -66,5 +66,5 @@ keys (which is a bit outdated, unfortunately).
 ## License
 MIT; check the LICENSE file.
 
-[installer]: https://github.com/rust-lang/rustup.rs/#other-installation-methods
+[installation]: https://github.com/rust-lang/rustup.rs/#other-installation-methods
 [RVM]: https://rvm.io/rvm/install
