@@ -1,5 +1,5 @@
 # ensure
-A composable CLI hash check.
+Check hashes with Unix pipes.
 
 ## Disclaimer
 This tool provides **no** additional security - it only prevents accidental
