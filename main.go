@@ -19,7 +19,7 @@ import (
 )
 
 const usage = `Usage:
-	$ [...] | ensure md5 1a79a4d60de6718e8e5b326e338ae533 | [...]
+	$ ... | ensure md5 1a79a4d60de6718e8e5b326e338ae533 | ...
 	Check the hash, then pass standard input to standard output.
 Options:
 	-list	List all supported algorithms.
@@ -95,6 +95,6 @@ func (e *ensure) list() {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		fmt.Println(k)
+		fmt.Println(os.Stderr, k)
 	}
 }

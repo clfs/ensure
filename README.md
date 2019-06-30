@@ -1,8 +1,9 @@
 # ensure
 A composable CLI hash check.
 
+## Disclaimer
 This tool provides **no** additional security - it only prevents accidental
-data modification. If you'd like to prevent *malicious* data modification, you
+data modification. If you need to prevent *malicious* data modification, you
 should use a public-key signature system.
 
 ## Installation
@@ -23,8 +24,8 @@ Options:
 ```
 
 ## Inspiration
-I thought of this while installing Rust. As of right now, the recommended
-`rustup` [installation] method looks like this:
+I thought of this while installing Rust. As of now, the recommended `rustup`
+[installation] method looks like this:
 ```
 curl https://sh.rustup.rs -sSf | sh
 ```
@@ -38,7 +39,7 @@ The `curl` flags are:
 
 If you check `man curl` though, you'll see that the `-f` flag isn't exactly
 fail-safe. At minimum, the 401 (Unauthorized) and 407 (Proxy Authentication
-Required) HTML response codes still cause `curl` to output data.
+Required) HTML response codes still cause `curl` to print to standard ouput.
 ```
 -f, --fail
        (HTTP)  Fail  silently (no output at all) on server errors. This
@@ -54,14 +55,14 @@ Required) HTML response codes still cause `curl` to output data.
 ```
 
 Instead, you can strengthen the `-f` flag by using `ensure` in tandem. Here's
-what that might look like (with the hash truncated for space):
+what that might look like (with the hash truncated for clarity):
 ```
 curl https://sh.rustup.rs -sSf | ensure sha256 9bbf4987[...] | sh
 ```
 
-This isn't a great solution, to be fair. I'd much prefer it if the `rustup` team
-used signing keys for their installer. For example, [RVM] does that using GPG
-keys (which is a bit outdated, unfortunately).
+This isn't a great solution, to be fair - I'd definitely prefer the `rustup`
+team use signing keys for their installation script. The [RVM] installer is a
+useful example, even if it uses outdated GPG tooling.
 
 ## License
 MIT; check the LICENSE file.
