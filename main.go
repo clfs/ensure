@@ -85,7 +85,7 @@ func (e *ensure) Run(args []string) {
 	if res != e.digest {
 		log.Fatalf("ERROR: expected %s, got %s", res, e.digest)
 	}
-	fmt.Printf(saved.String())
+	fmt.Printf("%s", saved.String())
 }
 
 func (e *ensure) list() {
@@ -95,6 +95,6 @@ func (e *ensure) list() {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		fmt.Println(os.Stderr, k)
+		fmt.Println(k)
 	}
 }
