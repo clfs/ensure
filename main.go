@@ -36,14 +36,14 @@ func main() {
 		quietFlag = flag.Bool("quiet", false, "")
 	)
 	flag.Usage = func() {
-		fmt.Fprintf(flag.CommandLine.Output(), usage)
+		fmt.Fprint(flag.CommandLine.Output(), usage)
 	}
 	flag.Parse()
 	if *quietFlag {
 		log.SetOutput(ioutil.Discard)
 	}
 	if *helpFlag || (!*listFlag && flag.NArg() == 0) {
-		fmt.Fprintf(flag.CommandLine.Output(), usage)
+		fmt.Fprint(flag.CommandLine.Output(), usage)
 		return
 	}
 	if !*listFlag && flag.NArg() != 2 {
